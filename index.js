@@ -12,7 +12,15 @@ db.run(`CREATE TABLE IF NOT EXISTS books (
     author TEXT
 )`);
 
-
+app.get('/books', (req, res) => {
+    db.all('SELECT * FROM books' ,  (err, row) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+                res.json(row);
+        }
+    });
+});
 
 
 app.get('/books/:id', (req, res) => {
