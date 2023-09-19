@@ -91,8 +91,8 @@ app.delete('/books/:id', (req, res) => {
     if (!book) {
         res.status(404).send('Book not found');
     } else {
-    book.destroy().then(() => {
-        res.send({});screenY
+      book.destroy().then(() => {
+        res.send({});
     }).catch(err => {
         res.status (500) .send(err);
     });
