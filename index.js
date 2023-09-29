@@ -33,7 +33,7 @@ const Book = sequelize.define('book', {
     allowNull: false
     }
 });
-    
+
     // create the books table if it doesn't exist
     sequelize.sync();
     
